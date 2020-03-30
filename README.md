@@ -19,6 +19,4 @@ The Program should make use of Object Oriented Principles discussed in class and
 
 Your project must also handle all errors and exceptions that may possibly occur.
 
-## Alternative Project
 
-If you would like to a project other than the Dunwoody Housing Application, you must submit a one-page proposal outlining the details of your project.  Your project must still meet the demands of the rubric requirements listed for project.  Your project must be approved by the instructor prior to commencing alternative project.  Alternative project proposals must be submitted within 1-week of release of project.
