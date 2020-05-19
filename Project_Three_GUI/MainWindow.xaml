@@ -4,9 +4,46 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Three_GUI"
+        xmlns:Properties="clr-namespace:Project_Three_GUI.Properties"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Welcome - Dunwoody Housing Manager"  WindowState="Maximized" WindowStyle="None" FontFamily="Proxima Nova" FontSize="18" >
+ 
+        <DockPanel Panel.ZIndex="0" Margin="0 0 0 0" Background="White">
+            <Image DockPanel.Dock="Left" Height="auto" Width="auto" Source="/Resources/homepageBG-v2.jpg"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <!--<Image.DataContext>
+                <Properties:Resources/>
+            </Image.DataContext>-->
+
+            <!--<Grid>-->
+                
+                <!--<DockPanel DockPanel.Dock="Right" Height="auto" MinWidth="300">-->
+                <StackPanel Orientation="vertical" Width="200" HorizontalAlignment="center" Panel.ZIndex="3" Background="White" Margin="0 0 0 0">
+                    <Button Width="auto" Height="auto" VerticalAlignment="Top" HorizontalAlignment="right" Margin="120,10,0,00" Background="White" Foreground="Black" Content="x" FontSize="30"  Click="Exit_Button" BorderBrush="{x:Null}" FontFamily="Proxima Nova" FontWeight="SemiBold"/>
+
+
+                    <Label Height="auto" FontSize="30" HorizontalAlignment="Center" Margin="0,50,0,100">
+                        <Label.Content>
+                    <AccessText TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tw Cen MT" Text="Dunwoody Housing Management"/>
+                        </Label.Content>
+                    </Label>
+                <Label Content="Username:" HorizontalAlignment="Center" Margin="0 0 0 0" Height="auto" FontSize="16"/>
+                <TextBox x:Name="username_box"  HorizontalAlignment="Center" MinWidth="100" MaxWidth="150" Margin="0 0 0 0" TextChanged="username" BorderBrush="#AC182E"/>
+
+                <Label Content="Password:" HorizontalAlignment="Center" Margin="0 10 0 0" Height="auto" FontSize="16"/>
+                <TextBox x:Name="password_box"  HorizontalAlignment="Center" MinWidth="100" MaxWidth="150" Margin="0 0 0 0" TextChanged="password" BorderBrush="#AC182E"/>    
+
+
+                <Button Content="SUBMIT" Width="100" Background="#AC182E" Foreground="White" FontSize="16" Height="30" Click="submit_btn" Margin="0,20,0,0"/>
+            <Label x:Name="error_msg" HorizontalAlignment="Center" Margin="0 10 0 0" >
+                <Label.Content>
+                    <AccessText Text="Invalid Username or Password, Please Try Again" TextAlignment="Center" FontSize="14" Foreground="#AC182E" TextWrapping="Wrap" Initialized="show_error_msg"/>
+                </Label.Content>
+            </Label>
+
+            <Image VerticalAlignment="Center" Height="auto" Width="auto" Source="/Resources/dunwoody-text-logo.png"  Margin="0,130,0,0" HorizontalAlignment="Left"/>
+            </StackPanel>
+           <!-- </Grid>-->
+        </DockPanel>
+
+
 </Window>

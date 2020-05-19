@@ -10,7 +10,7 @@ namespace Project_Three_GUI.Models
     {
         public int StudentID { get; set; }
         public string Name { get; set; }
-        public int BoardingFee { get; set; }
-        public int FloorNumber { get; set; }
+        public string Type { get; set; }
+        
     }
 }

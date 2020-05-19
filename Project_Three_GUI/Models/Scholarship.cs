@@ -8,5 +8,43 @@ namespace Project_Three_GUI.Models
 {
     class Scholarship : Resident
     {
-    }
+		public int BoardingFee { get; set; } = 100;
+		public int Floor { get; set; }
+		
+
+		//Note here how we still have to add name & email which are inherited from resident
+		public Scholarship(int ID, string name, string type, int fee, int floor)
+		{
+			StudentID = ID;
+			Name = name;
+			Type = type;
+			BoardingFee = fee;
+			Floor = floor;
+			
+			/*
+			void ScholarshipFloorNum (int determinent)
+			{
+				if (determinent == 7)
+				{
+					Floor = 7;
+				}
+				else if (determinent == 8)
+				{
+					Floor = 8;
+				}
+				else
+				{
+					Console.WriteLine("Error Message");
+					Floor = 7; //This will be our default value
+				}
+			}//end of method
+			*/
+		
+		}//end of scholarship class
+
+		public override string ToString()
+		{
+			return String.Format($"{StudentID},{Name},{Type},{BoardingFee},{Floor}");
+		}
+	}
 }
