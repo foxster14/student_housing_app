@@ -8,32 +8,34 @@ namespace Project_Three_GUI.Models
 {
     class Student : Resident
     {
-		public int BoardingFee { get; set; }
-		public int Floor { get; set; }
+		public double BoardingFee { get; set; }
 		public int HrlyWage { get; set; }
         public int HrsWorked { get; set; }
         public int Earnings { get; set; }
 
 		//Note here how we still have to add name & email which are inherited from resident
-		public Student(int ID, string name, string type, int fee, int floor, int hrlywage, int hrs, int earnings)
+		public Student(int ID, string name, string type, double fee, int floor, int room, int hrlywage, int hrs, int earnings)
 		{
 			StudentID = ID;
 			Name = name;
 			Type = type;
 			BoardingFee = fee;
 			Floor = floor;
+			Room = room;
 			HrlyWage = hrlywage;
 			HrsWorked = hrs;
 			Earnings = earnings;
 		}
 
 		//Overloaded student method (polymorphism_
-		public Student(int ID, string name, int fee, int floor)
+		public Student(int ID, string name, string type, int fee, int floor, int room)
 		{
 			StudentID = ID;
 			Name = name;
+			Type = type;
 			BoardingFee = fee;
 			Floor = floor;
+			Room = room;
 			
 		}
 

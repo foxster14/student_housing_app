@@ -9,17 +9,17 @@ namespace Project_Three_GUI.Models
     class Scholarship : Resident
     {
 		public int BoardingFee { get; set; } = 100;
-		public int Floor { get; set; }
 		
 
 		//Note here how we still have to add name & email which are inherited from resident
-		public Scholarship(int ID, string name, string type, int fee, int floor)
+		public Scholarship(int ID, string name, string type, int fee, int floor, int room)
 		{
 			StudentID = ID;
 			Name = name;
 			Type = type;
 			BoardingFee = fee;
 			Floor = floor;
+			Room = room;
 			
 			/*
 			void ScholarshipFloorNum (int determinent)

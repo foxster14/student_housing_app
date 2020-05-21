@@ -26,17 +26,23 @@ namespace Project_Three_GUI
 
         private void resident_btn(object sender, RoutedEventArgs e)
         {
+            AddResident openResidentPage = new AddResident();
+            openResidentPage.Show();
             this.Close();
+           
 
         }
 
         private void Exit_Button(object sender, RoutedEventArgs e)
         {
+           
             this.Close();
         }
 
         private void search_btn(object sender, RoutedEventArgs e)
         {
+            SearchPage openSearchPage = new SearchPage();
+            openSearchPage.Show();
             this.Close();
         }
     }

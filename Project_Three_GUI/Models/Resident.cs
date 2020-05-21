@@ -11,6 +11,8 @@ namespace Project_Three_GUI.Models
         public int StudentID { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
+        public int Floor { get; set; }
+        public int Room { get; set; }
         
     }
 }

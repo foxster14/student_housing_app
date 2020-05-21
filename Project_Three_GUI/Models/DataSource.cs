@@ -21,26 +21,33 @@ namespace Project_Three_GUI.Models
 		//FileStream outFile;
 		//StreamWriter writer;
 		List<Student> StudentList; //Global
+		ObservableCollection<Resident> StudentCollection { get; set; }
 
-		public ObservableCollection<Student> readData()
+		public ObservableCollection<Resident> readData()
 		{
 			string primer;
 			string[] studentData;
-			ObservableCollection<Student> StudentList = null; //Local
+			ObservableCollection<Resident> StudentCollection = null; //Local
+			//need to change this to resident
 			try
 			{
 				infile = new FileStream(PATH, FileMode.Open, FileAccess.Read);
 				read = new StreamReader(infile);
 				primer = read.ReadLine(); //primer
-				StudentList = new ObservableCollection<Student>();
+				StudentCollection = new ObservableCollection<Resident>();
 
 				//Looping structure that's going to read in all of my records
 				while (!read.EndOfStream)
 				{
 					//Read in the records and create generic student object instances
 					studentData = read.ReadLine().Split(',');
-					StudentList.Add(new Student(Convert.ToInt32(studentData[0]), studentData[1], studentData[2], Convert.ToInt32(studentData[3]), Convert.ToInt32(studentData[4]), Convert.ToInt32(studentData[5]), Convert.ToInt32(studentData[6]), Convert.ToInt32(studentData[7])));
-					Console.WriteLine(StudentList[StudentList.Count - 1]);
+					
+					//Add decision making logic to add specific students to worker, athelete & scholarship
+
+					//StudentCollection.Add(new Student(Convert.ToInt32(studentData[0]), studentData[1], studentData[2], Convert.ToInt32(studentData[3]), Convert.ToInt32(studentData[4]), Convert.ToInt32(studentData[5]),Convert.ToInt32(studentData[6]), Convert.ToInt32(studentData[7]), Convert.ToInt32(studentData[8])));
+					StudentCollection.Add(new Student(Convert.ToInt32(studentData[0]), studentData[1], studentData[2], Convert.ToInt32(studentData[3]), Convert.ToInt32(studentData[4]), Convert.ToInt32(studentData[5])));
+
+					//Console.WriteLine(StudentCollection[StudentCollection.Count - 1]);
 
 				}
 
@@ -56,38 +63,36 @@ namespace Project_Three_GUI.Models
 			}
 
 			//This method needs to return something, it will return the list of Student objects
-			return StudentList;
+			return StudentCollection;
 
 		}//End of readData() method
 
-		public void writeData(List<Student> data, string determinant)
+		public void writeData(ObservableCollection<Resident> data)
 		{
-			FileStream outFile = new FileStream(PATH, FileMode.Create, FileAccess.Write);
-			StreamWriter writer = new StreamWriter(outFile);
-
-			///// MAY NEED TO DELETE THIS LOGIC... DEPENDS....
-			if (determinant == "workers")
+			try
 			{
+				FileStream outFile = new FileStream(PATH, FileMode.Create, FileAccess.Write);
+				StreamWriter writer = new StreamWriter(outFile);
+
+				//Write out the heading
+				writer.WriteLine("Student ID,Name,Student Type,Boarding Fee,Floor Number");
 				foreach (Student x in data)
 				{
-					//writer.WriteLine(x.outputWinner());
+					//Write out each record
+					//writer.WriteLine($"{x.StudentID},{x.Name},{x.Type},{x.BoardingFee.ToString()},{x.Floor.ToString()},{x.Room.ToString()},{x.HrlyWage.ToString()},{x.HrsWorked.ToString()},{x.Earnings.ToString()}");
+					writer.WriteLine($"{x.StudentID},{x.Name},{x.Type},{x.BoardingFee.ToString()},{x.Floor.ToString()},{x.Room.ToString()}");
+					
 				}
+
+				//Close the files
+				writer.Dispose();
+				outFile.Dispose();
 			}
-
-			//Write out the heading
-			writer.WriteLine("Student ID,Name,Student Type,Boarding Fee,Floor Number,Hourly Wage,Monthly Hrs Worked,Monthly Wage");
-
-			foreach (Student x in data)
+			catch (Exception ex)
 			{
-				//Write out each record
-				writer.WriteLine($"{x.StudentID},{x.Name},{x.Type},{x.BoardingFee.ToString()},{x.Floor.ToString()},{x.HrlyWage.ToString()},{x.HrsWorked.ToString()},{x.Earnings.ToString()}");
-				writer.WriteLine(ToString());
+				Console.WriteLine(ex.Message);
 			}
-
-			//Close the files
-			writer.Dispose();
-			outFile.Dispose();
-		}
+		}//End of WriteData() Method
 	}
 }
 
