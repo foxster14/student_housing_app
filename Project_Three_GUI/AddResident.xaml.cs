@@ -27,11 +27,10 @@ namespace Project_Three_GUI
         int BoardingFee;
         List<int[]> floorNumList = new List<int[]>
                 {
-                    new int[] {1,2,3,4,5,6,7},
+                    new int[] {1,2,3,4,5,6,7,8},
                     new int[] {1,2,3},
                     new int[] {4,5,6},
                     new int[] {7,8}
-
                 };
 
 
@@ -39,13 +38,8 @@ namespace Project_Three_GUI
         {
             InitializeComponent();
             studentList = source.readData();
-            name_box.Text = "something";
-            //floor_drop_down.ItemsSource = floorNumList[0];
-
-        }
-
-        private void student_type_TextChanged(object sender, TextChangedEventArgs e)
-        {
+            //name_box.Text = "something";
+            floor_drop_down.ItemsSource = floorNumList[0];
 
         }
 
@@ -76,32 +70,42 @@ namespace Project_Three_GUI
             this.Close();
         }
 
-        //private void student_type_changed(object sender, SelectionChangedEventArgs e)
-        //{
+        private void student_type_changed(object sender, SelectionChangedEventArgs e)
+        {
              //ComboBoxItem studentType = (ComboBoxItem)student_type_drop_down.SelectedItem;
-     
-            
+            floor_drop_down.ItemsSource = floorNumList[student_type_drop_down.SelectedIndex + 1];
+            hours_box.Text = "";
+
             //Here is where decision logic goes
+            if (student_type_drop_down.SelectedIndex == 0)
+            {
+                hours_box.IsEnabled = true;
+            }
+            else
+            {
+                hours_box.IsEnabled = false;
+            }
+            
             //if (studentType.Content.ToString() == "Student Worker")
-            //{
-                //Assign floor numbers to the other combobox, now give values for floor combo box
-                //name_box.Text = "Hello";
-                //floor_drop_down.ItemsSource = floorNumList[1]; //Same thing as saying floorNumList[0]
-                //hours_box.IsEnabled = true;
+            // {
+            //     //Assign floor numbers to the other combobox, now give values for floor combo box
+            //     //name_box.Text = "Hello";
+            //     floor_drop_down.ItemsSource = floorNumList[1]; //Same thing as saying floorNumList[0]
+            //     //hours_box.IsEnabled = true;
 
-            //}
-           //else if (studentType.Content.ToString() == "Athlete")
-           // {
-           //     floor_drop_down.ItemsSource = floorNumList[2];
-           //     //hours_box.IsEnabled = true;
-           // }
-           //else //This is the athlete selection 
-           // {
-           //     floor_drop_down.ItemsSource = floorNumList[3];
-           //     //hours_box.IsReadOnly = false;
+            // }
+            //else if (studentType.Content.ToString() == "Athlete")
+            // {
+            //     floor_drop_down.ItemsSource = floorNumList[2];
+            //     //hours_box.IsEnabled = true;
+            // }
+            //else //This is the athlete selection 
+            // {
+            //     floor_drop_down.ItemsSource = floorNumList[3];
+            //     //hours_box.IsReadOnly = false;
 
-           // }
-        //}
+            // }
+        }
 
         private void ID_box_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -113,14 +117,18 @@ namespace Project_Three_GUI
             //add a submit button that adds an object instance of classes & adds them to a list 
             //Example of casting
             ComboBoxItem studentType = (ComboBoxItem)student_type_drop_down.SelectedItem; //now we have a name for the term item in our combobox (dropdown)
-            ComboBoxItem floor = (ComboBoxItem)floor_drop_down.SelectedItem;
+            //ComboBoxItem floor = (ComboBoxItem)floor_drop_down.SelectedItem;
             ComboBoxItem room = (ComboBoxItem)room_drop_down.SelectedItem;
             
 
             if (studentType.Content.ToString() == "Athlete")
             {
                 BoardingFee = 1200;
-                aStudent = new Student(Convert.ToInt32(ID_box.Text), name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor.Content.ToString()), Convert.ToInt32(room.Content.ToString()));
+                var prevStudID = studentList[studentList.Count - 1].StudentID;
+
+                var floor = floor_drop_down.SelectedItem.ToString();
+                //MessageBox.Show(prevStudID.ToString());
+                aStudent = new Student(prevStudID +=1, name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor), Convert.ToInt32(room.Content.ToString()));
                 //Adding new student to List
                 studentList.Add(aStudent);
                 //Writing new data to CSV file
@@ -129,19 +137,20 @@ namespace Project_Three_GUI
             else if (studentType.Content.ToString() == "Scholarship Recipient")
             {
                 BoardingFee = 100;
-                aStudent = new Student(Convert.ToInt32(ID_box.Text), name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor.Content.ToString()), Convert.ToInt32(room.Content.ToString()));
-                studentList.Add(aStudent);
+                //MessageBox.Show(floor.Content.ToString());
+                //aStudent = new Student(Convert.ToInt32(ID_box.Text), name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor.Content.ToString()), Convert.ToInt32(room.Content.ToString()));
+                //studentList.Add(aStudent);
                 //Writing new data to CSV file
-                source.writeData(studentList);
+                //source.writeData(studentList);
             }
             else if (studentType.Content.ToString() == "Student Worker")
             {
                 int wage = 14 * Convert.ToInt32(hours_box.Text);
                 BoardingFee = 1245 - wage;
-                aStudent = new Student(Convert.ToInt32(ID_box.Text), name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor.Content.ToString()), Convert.ToInt32(room.Content.ToString()));
-                studentList.Add(aStudent);
+                //aStudent = new Student(Convert.ToInt32(ID_box.Text), name_box.Text, studentType.Content.ToString(), BoardingFee, Convert.ToInt32(floor.Content.ToString()), Convert.ToInt32(room.Content.ToString()));
+                //studentList.Add(aStudent);
                 //Writing new data to CSV file
-                source.writeData(studentList);
+                //source.writeData(studentList);
             }
 
             try
@@ -169,9 +178,5 @@ namespace Project_Three_GUI
 
         }
 
-        private void student_type_changed(object sender, SelectionChangedEventArgs e)
-        {
-            name_box.Text = "Hello";
-        }
     }
 }

@@ -13,11 +13,15 @@
             <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" />
             <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="150, 200, 100, 0">
+        <StackPanel Margin="150, 100, 100, 0">
+            
+            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="150, 100, 100, 0">
         <StackPanel VerticalAlignment="Center">
             <Label Content="Student Type:" HorizontalAlignment="Left" Margin="0,0,0,5" Height="auto" FontSize="16"/>
                 <ComboBox x:Name="student_type_drop_down" Width="190" Background="White" BorderBrush="#AC182E" SelectionChanged="student_type_changed">
-                    <ComboBoxItem IsSelected="True">Student Worker</ComboBoxItem>
+                    <ComboBoxItem>Student Worker</ComboBoxItem>
                     <ComboBoxItem>Athlete</ComboBoxItem>
                     <ComboBoxItem>Scholarship Recipient</ComboBoxItem>
                 </ComboBox>
@@ -26,10 +30,10 @@
                 <Label Content="Full Name:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <TextBox x:Name="name_box" Text="First Last" HorizontalAlignment="Left" MinWidth="200" MaxWidth="150" Margin="0 0 0 0" TextChanged="name_box_TextChanged" BorderBrush="#AC182E"/>
             </StackPanel>
-            <StackPanel Margin="80 0 0 0">
+            <!--<StackPanel Margin="80 0 0 0">
                 <Label Content="Student ID:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <TextBox x:Name="ID_box" Text="000#" HorizontalAlignment="Left" MinWidth="85" MaxWidth="120" Margin="0 0 0 0" TextChanged="ID_box_TextChanged" BorderBrush="#AC182E"/>
-            </StackPanel>
+            </StackPanel>-->
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"  Margin="150, 50, 100, 0">
@@ -41,7 +45,7 @@
             <StackPanel Margin="70 0 0 0">
                 <Label Content="Room Number:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <ComboBox x:Name="room_drop_down" Background="White" BorderBrush="#AC182E">
-                    <ComboBoxItem IsSelected="True">1</ComboBoxItem>
+                    <ComboBoxItem>1</ComboBoxItem>
                     <ComboBoxItem>2</ComboBoxItem>
                     <ComboBoxItem>3</ComboBoxItem>
                     <ComboBoxItem>4</ComboBoxItem>
@@ -57,12 +61,11 @@
                 <Label Content="Monthly Hours:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <TextBox x:Name="hours_box"  HorizontalAlignment="Left" MinWidth="120" MaxWidth="150" Margin="0 0 0 0" TextChanged="hours_box_TextChanged" BorderBrush="#AC182E" IsEnabledChanged="monthly_hrs_enabled" />
             </StackPanel>
-            <StackPanel Margin="70 0 0 0">
-                <Button x:Name="submit_btn" Width="100" Height="40" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 20 0 0" Foreground="White" Content="SUBMIT" FontSize="14" Click="submit_btn_Click" BorderBrush="{x:Null}" />
-            </StackPanel>
         </StackPanel>
-        
-       
-        
+        <StackPanel Margin="420 40 0 0">
+            <Button x:Name="submit_btn" Width="100" Height="40" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 20 0 0" Foreground="White" Content="SUBMIT" FontSize="14" Click="submit_btn_Click" BorderBrush="{x:Null}" />
+        </StackPanel>
+
+
     </StackPanel>
 </Window>
