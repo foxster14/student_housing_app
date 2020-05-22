@@ -20,12 +20,14 @@
         </StackPanel>
         <StackPanel>
 
-            <materialDesign:Card Padding="22" Margin="150 40 150 0">
+            <materialDesign:Card Padding="27" Margin="150 60 150 0">
 
-            <StackPanel Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Content="Search by Student ID" Foreground="#AC182E" FontFamily="Proxima Nova" FontSize="16"/>
                 <TextBox x:Name="studentID_name_search" FontSize="16" Foreground="Gray" Width="200" Margin="10 0 0 0" TextChanged="search_student_ID"/>
-            </StackPanel>
+                    <Label Content="Search by Name" Foreground="#AC182E" FontFamily="Proxima Nova" FontSize="16" Margin="40 0 0 0"/>
+                    <TextBox x:Name="name_search" FontSize="16" Foreground="Gray" Width="200" Margin="10 0 0 0" TextChanged="search_name"/>
+                </StackPanel>
             </materialDesign:Card>
 
             <DataGrid x:Name="student_grid" SelectionMode="Single" Width="Auto" MaxWidth="800" AutoGenerateColumns="False" Margin="100 20 100 0" SelectionChanged="selected_student" BorderBrush="{x:Null}" Foreground="#AC182E" FontFamily="Georgia" FontStyle="Italic">
@@ -39,40 +41,44 @@
             </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <StackPanel Margin="100 30 100 0">
-            <Label Height="auto" FontSize="26" HorizontalAlignment="Left" Margin="0,0,0,0" Content="Student Count" FontFamily="Tw Cen MT" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Margin="150 40 100 0">
+            <Label Height="auto" FontSize="28" HorizontalAlignment="Left" Margin="0,0,0,0" Content="Student Count" FontFamily="Tw Cen MT" />
 
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="0 0 0 0" HorizontalAlignment="Center">
                     <Label Content="Work Study" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                    <TextBox x:Name="worker_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="worker_box" IsReadOnly="True" Foreground="#AC182E" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                 </StackPanel>
                 <StackPanel Margin="20 0 0 0" HorizontalAlignment="Center">
                     <Label Content="Athletes" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                    <TextBox x:Name="athlete_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="athlete_box" FontSize="16" IsReadOnly="True" Foreground="#AC182E" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                 </StackPanel>
                 <StackPanel Margin="20 0 0 0" HorizontalAlignment="Center">
                     <Label Content="Scholarships" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                    <TextBox x:Name="scholarship_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="scholarship_box" IsReadOnly="True" Foreground="#AC182E" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                 </StackPanel>
             </StackPanel>
+            </StackPanel>
 
-            <Label Height="auto" FontSize="26" HorizontalAlignment="Left" Margin="0,0,0,0" Content="Floor Count" FontFamily="Tw Cen MT" />
+            <StackPanel Margin="0 40 150 0">
+            <Label Height="auto" FontSize="28" HorizontalAlignment="Left" Margin="0,10,0,0" Content="Floor Count" FontFamily="Tw Cen MT" />
             <StackPanel Orientation="Horizontal">
                     <StackPanel Margin="0 0 0 0" HorizontalAlignment="Center">
                         <Label Content="Floors 1-3" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                        <TextBox x:Name="floor1_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="floor1_box" IsReadOnly="True" Foreground="#AC182E" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                     </StackPanel>
                     <StackPanel Margin="20 0 0 0" HorizontalAlignment="Center">
                         <Label Content="Floors 4-6" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                        <TextBox x:Name="floor2_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="floor2_box" IsReadOnly="True" Foreground="#AC182E" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                     </StackPanel>
                     <StackPanel Margin="20 0 0 0" HorizontalAlignment="Center">
                         <Label Content="Floors 7-8" HorizontalAlignment="Left" Margin="0 0 0 0" Height="auto" FontSize="16"/>
-                        <TextBox x:Name="floor3_box" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
+                    <TextBox x:Name="floor3_box" IsReadOnly="True" Foreground="#AC182E" FontSize="16" HorizontalAlignment="Left" MinWidth="50" MaxWidth="150" Margin="0 0 0 0" BorderBrush="{x:Null}"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
-    
+        </StackPanel>
     </StackPanel>
 </Window>

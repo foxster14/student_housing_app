@@ -27,16 +27,40 @@ namespace Project_Three_GUI
         DataSource source = new DataSource(); //we need to create an object instacne of data source
         ObservableCollection<Resident> studentList = null; //now any changes made to this list will be updated automatically due to the observable list
         Resident aStudent;
-       
+
         public SearchPage()
         {
             InitializeComponent();
             this.DataContext = source.readData();
             student_grid.ItemsSource = source.readData();
+
             studentList = source.readData();
 
-            var scholarshipCount = studentList.Where(x => x.Type.Contains("Scholarship"));
-            scholarship_box.Text = scholarshipCount.ToString();
+            try
+            {
+                var scholarshipCount = studentList.Where(x => x.Type.Contains("Scholarship"));
+                scholarship_box.Text = scholarshipCount.Count().ToString();
+
+                var athleteCount = studentList.Where(x => x.Type.Contains("Athlete"));
+                athlete_box.Text = athleteCount.Count().ToString();
+
+                var workerCount = studentList.Where(x => x.Type.Contains("Student Worker"));
+                worker_box.Text = workerCount.Count().ToString();
+
+                var floor1Count = studentList.Where(x => x.Floor.Equals(1) || x.Floor.Equals(2) || x.Floor.Equals(3));
+                floor1_box.Text = floor1Count.Count().ToString();
+
+                var floor2Count = studentList.Where(x => x.Floor.Equals(4) || x.Floor.Equals(5) || x.Floor.Equals(6));
+                floor2_box.Text = floor2Count.Count().ToString();
+
+                var floor3Count = studentList.Where(x => x.Floor.Equals(7) || x.Floor.Equals(8));
+                floor3_box.Text = floor3Count.Count().ToString();
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void selected_student(object sender, SelectionChangedEventArgs e)
@@ -74,5 +98,26 @@ namespace Project_Three_GUI
                 student_grid.ItemsSource = studentList;
             }
         }
-    }
+
+        private void search_name(object sender, TextChangedEventArgs e)
+        {
+            if (name_search.Text != null)
+            {
+                student_grid.ItemsSource = studentList.Where(x => x.Name.ToString().Contains(name_search.Text));
+            }
+            else
+            {
+                student_grid.ItemsSource = studentList;
+            }
+        }
+
+        //public void studentCount(ObservableCollection<Resident> studentTotal, ObservableCollection<Resident>studentList, string type, TextBox box )
+        //{
+        //    studentTotal = studentList.Where(x => x.Type.Contains(type));
+        //    box.Text = studentTotal.Count().ToString();
+
+
+        //}
+
+    }//End of partial class
 }

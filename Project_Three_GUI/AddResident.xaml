@@ -9,8 +9,8 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal" Background="#AC182E" >
             <Image Height="Auto" Width="200" Source="/Resources/dunwoody-red-text-logo.jpg" Margin="20 20 20 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="White" Margin="0 0 0 0" Foreground="#AC182E" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="White"  />
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="White" Margin="0 0 0 0" Foreground="#AC182E" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="White" BorderThickness="0" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" BorderThickness="0" />
             <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" />
         </StackPanel>
         <StackPanel Margin="100, 80, 100, 0">
@@ -20,11 +20,12 @@
                 </Label.Content>
             </Label>
             <Label Margin="0 10 0 0" Height="auto" HorizontalAlignment="Center" FontSize="18" Foreground="#AC182E" FontFamily="Georgia" FontStyle="Italic" Content="Monthly Hours Only Required for Student Workers" />
+            
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Margin="100, 50, 100, 0" HorizontalAlignment="Center">
         <StackPanel VerticalAlignment="Center">
-            <Label Content="Student Type:" HorizontalAlignment="Left" Margin="0,0,0,5" Height="auto" FontSize="16"/>
+            <Label Content="* Student Type:" HorizontalAlignment="Left" Margin="0,0,0,5" Height="auto" FontSize="16"/>
                 <ComboBox x:Name="student_type_drop_down" Width="190" Background="White" BorderBrush="#AC182E" SelectionChanged="student_type_changed">
                     <ComboBoxItem>Student Worker</ComboBoxItem>
                     <ComboBoxItem>Athlete</ComboBoxItem>
@@ -32,7 +33,7 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="100 0 0 0">
-                <Label Content="Full Name:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
+                <Label Content="* Full Name:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <TextBox x:Name="name_box" Text="First Last" HorizontalAlignment="Left" MinWidth="200" MaxWidth="150" Margin="0 0 0 0" TextChanged="name_box_TextChanged" BorderBrush="#AC182E"/>
             </StackPanel>
             <!--<StackPanel Margin="80 0 0 0">
@@ -43,12 +44,12 @@
 
         <StackPanel Orientation="Horizontal"  Margin="100, 50, 100, 0" HorizontalAlignment="Center">
             <StackPanel>
-                <Label Content="Floor Number:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
+                <Label Content="* Floor Number:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <ComboBox x:Name="floor_drop_down" Background="White" BorderBrush="#AC182E">
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="70 0 0 0">
-                <Label Content="Room Number:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
+                <Label Content="* Room Number:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <ComboBox x:Name="room_drop_down" Background="White" BorderBrush="#AC182E">
                     <ComboBoxItem>1</ComboBoxItem>
                     <ComboBoxItem>2</ComboBoxItem>
@@ -63,7 +64,7 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel Margin="70 0 0 0">
-                <Label Content="Monthly Hours:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
+                <Label x:Name="hours_label" Content="Monthly Hours:" HorizontalAlignment="Left" Margin="0 0 0 5" Height="auto" FontSize="16"/>
                 <TextBox x:Name="hours_box"  HorizontalAlignment="Left" MinWidth="120" MaxWidth="150" Margin="0 0 0 0" TextChanged="hours_box_TextChanged" BorderBrush="#AC182E" IsEnabledChanged="monthly_hrs_enabled" />
             </StackPanel>
         </StackPanel>

@@ -75,7 +75,7 @@ namespace Project_Three_GUI.Models
 				StreamWriter writer = new StreamWriter(outFile);
 
 				//Write out the heading
-				writer.WriteLine("Student ID,Name,Student Type,Boarding Fee,Floor Number");
+				writer.WriteLine("Student ID,Name,Student Type,Boarding Fee,Floor Number, Room Number");
 				foreach (Student x in data)
 				{
 					//Write out each record

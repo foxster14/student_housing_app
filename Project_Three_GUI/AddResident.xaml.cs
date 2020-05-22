@@ -39,6 +39,7 @@ namespace Project_Three_GUI
             studentList = source.readData();
             //name_box.Text = "something";
             floor_drop_down.ItemsSource = floorNumList[0];
+            hours_box.IsEnabled = false;
 
         }
 
@@ -74,15 +75,19 @@ namespace Project_Three_GUI
              //ComboBoxItem studentType = (ComboBoxItem)student_type_drop_down.SelectedItem;
             floor_drop_down.ItemsSource = floorNumList[student_type_drop_down.SelectedIndex + 1]; //same thing as floorNumList[1]
             hours_box.Text = "";
+            
 
             //Here is where decision logic goes
             if (student_type_drop_down.SelectedIndex == 0) //This is Student Worker
             {
                 hours_box.IsEnabled = true;
+                hours_label.Content = "* Monthly Hours";
             }
+
             else
             {
                 hours_box.IsEnabled = false;
+                hours_label.Content = "Monthly Hours";
             }
         }
 
@@ -97,6 +102,11 @@ namespace Project_Three_GUI
             ComboBoxItem studentType = (ComboBoxItem)student_type_drop_down.SelectedItem; //now we have a name for the term item in our combobox (dropdown) 
             ComboBoxItem room = (ComboBoxItem)room_drop_down.SelectedItem;
             var prevStudID = studentList[studentList.Count - 1].StudentID;
+
+            //if (student_type_drop_down.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("This is a required field");
+            //}
 
             try
             {
