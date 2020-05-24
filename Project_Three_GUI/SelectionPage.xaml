@@ -24,11 +24,19 @@
                         <AccessText TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tw Cen MT" Text="Welcome to the Dunwoody Housing Application"/>
                     </Label.Content>
                 </Label>
-                <Label Height="auto" FontSize="24" FontFamily="Georgia" FontStyle="Italic" Foreground="#ae1f31" HorizontalAlignment="Center" Margin="100,10,100,100" Content="Please Select from the Following"/>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel>
-                    
+                <Label Height="auto" FontSize="24" FontFamily="Georgia" FontStyle="Italic" Foreground="#ae1f31" HorizontalAlignment="Center" Margin="100,10,100,50" Content="Please Select from the Following"/>
+           
+                <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="100 0 0 100">
+                    <Button Height="150" Width="Auto" Foreground="Gray" Style="{DynamicResource MaterialDesignToolButton}">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="Resources/home.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </StackPanel>
+               
             </StackPanel>
             
         </StackPanel>

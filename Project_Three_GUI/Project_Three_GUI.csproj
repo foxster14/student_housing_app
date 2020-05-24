@@ -141,12 +141,6 @@
     <Resource Include="Resources\homepageBG-v2.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\HomePageBG.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\unnamed.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\dunwoody-text-logo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\spring-deans-list.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dunwoody-flowers-cropped.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\homepage-red.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.2\build\MaterialDesignThemes.targets')" />
