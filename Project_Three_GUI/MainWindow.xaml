@@ -18,7 +18,7 @@
                 
                 <!--<DockPanel DockPanel.Dock="Right" Height="auto" MinWidth="300">-->
                 <StackPanel Orientation="vertical" Width="200" HorizontalAlignment="center" Panel.ZIndex="3" Background="White" Margin="0 0 0 0">
-                    <Button Width="auto" Height="auto" VerticalAlignment="Top" HorizontalAlignment="right" Margin="120,10,0,00" Background="White" Foreground="Black" Content="x" FontSize="30"  Click="Exit_Button" BorderBrush="{x:Null}" FontFamily="Proxima Nova" FontWeight="SemiBold"/>
+            <Button Width="auto" Height="auto" VerticalAlignment="Top" HorizontalAlignment="right" Margin="120,10,0,00" Background="White" Foreground="Black" Content="x" FontSize="30"  Click="Exit_Button" BorderBrush="{x:Null}" FontFamily="Proxima Nova" FontWeight="SemiBold" Style="{DynamicResource MaterialDesignFlatButton}" />
 
 
                     <Label Height="auto" FontSize="30" HorizontalAlignment="Center" Margin="0,50,0,100">

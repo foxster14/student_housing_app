@@ -7,11 +7,11 @@
         mc:Ignorable="d"
        Title="Housing Manger Landing Page"  WindowState="Maximized" WindowStyle="None" FontFamily="Proxima Nova" FontSize="16" >
     <StackPanel>
-        <StackPanel Orientation="Horizontal" Background="#AC182E" >
+        <StackPanel Orientation="Horizontal" Background="#ae1f31" >
             <Image Height="Auto" Width="200" Source="/Resources/dunwoody-red-text-logo.jpg" Margin="20 20 20 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="White" Margin="0 0 0 0" Foreground="#AC182E" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="White" BorderThickness="0" />
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" BorderThickness="0" />
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="White" Margin="0 0 0 0" Foreground="#5e121d" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="White" BorderThickness="0" Style="{DynamicResource MaterialDesignFlatButton}"/>
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#ae1f31" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" BorderThickness="0" Style="{DynamicResource MaterialDesignFlatButton}" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#ae1f31" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" Style="{DynamicResource MaterialDesignFlatButton}"/>
         </StackPanel>
         <StackPanel Margin="100, 80, 100, 0">
             <Label Height="auto" FontSize="30" HorizontalAlignment="Center" Margin="0,0,0,0" BorderBrush="Black" BorderThickness="2">

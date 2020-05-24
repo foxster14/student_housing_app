@@ -10,14 +10,26 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="/Resources/spring-deans-list.jpg" />
         </StackPanel.Background>
-        <StackPanel Orientation="Horizontal" Background="#AC182E">
+        <StackPanel Orientation="Horizontal" Background="#ae1f31">
             <Image Height="Auto" Width="200" Source="/Resources/dunwoody-red-text-logo.jpg" Margin="20 20 20 0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="{x:Null}"  />
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" />
-            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#AC182E" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#ae1f31" Margin="0 0 0 0" Foreground="White" Content="ADD RESIDENT" FontSize="14" Click="resident_btn" BorderBrush="{x:Null}" Style="{DynamicResource MaterialDesignFlatButton}"   />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#ae1f31" Margin="0 0 0 0" Foreground="White" Content="SEARCH" FontSize="14" Click="search_btn" BorderBrush="{x:Null}" Style="{DynamicResource MaterialDesignFlatButton}" />
+            <Button Width="200" Height="100" VerticalAlignment="Bottom" Background="#ae1f31" Margin="0 0 0 0" Foreground="White" Content="EXIT" FontSize="14" Click="Exit_Button" BorderBrush="{x:Null}" Style="{DynamicResource MaterialDesignFlatButton}" />
         </StackPanel>
        
-        <StackPanel Background="White" Width="700" Height="500" Margin="0 50 0 0" Opacity="0.85">
+        <StackPanel Background="White" Width="700" Height="500" Margin="0 50 0 0" Opacity="0.90">
+            
+                <Label Height="auto" FontSize="40" HorizontalAlignment="Center" Margin="100,100,100,0">
+                    <Label.Content>
+                        <AccessText TextWrapping="Wrap" TextAlignment="Center" FontFamily="Tw Cen MT" Text="Welcome to the Dunwoody Housing Application"/>
+                    </Label.Content>
+                </Label>
+                <Label Height="auto" FontSize="24" FontFamily="Georgia" FontStyle="Italic" Foreground="#ae1f31" HorizontalAlignment="Center" Margin="100,10,100,100" Content="Please Select from the Following"/>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    
+                </StackPanel>
+            </StackPanel>
             
         </StackPanel>
         

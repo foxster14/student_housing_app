@@ -29,8 +29,6 @@ namespace Project_Three_GUI
             AddResident openResidentPage = new AddResident();
             openResidentPage.Show();
             this.Close();
-           
-
         }
 
         private void Exit_Button(object sender, RoutedEventArgs e)

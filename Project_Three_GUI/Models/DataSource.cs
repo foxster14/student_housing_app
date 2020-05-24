@@ -76,7 +76,7 @@ namespace Project_Three_GUI.Models
 
 				//Write out the heading
 				writer.WriteLine("Student ID,Name,Student Type,Boarding Fee,Floor Number, Room Number");
-				foreach (Student x in data)
+				foreach (Student x in data) 
 				{
 					//Write out each record
 					//writer.WriteLine($"{x.StudentID},{x.Name},{x.Type},{x.BoardingFee.ToString()},{x.Floor.ToString()},{x.Room.ToString()},{x.HrlyWage.ToString()},{x.HrsWorked.ToString()},{x.Earnings.ToString()}");
